@@ -14,21 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return 'Home page';
+  return view('home.index', []);
 })->name('home.index');
 
 Route::get('/contact', function () {
-    return 'Contact';
+  return 'Contact';
 })->name('home.contact');
 
 Route::get('/posts/{id}', function ($id) {
-    return 'Blog post ' . $id;
+  return 'Blog post ' . $id;
 })
-    // ->where([
-    //     'id' => '[0-9]+'
-    // ])
-    ->name('posts.show');
+  // ->where([
+  //     'id' => '[0-9]+'
+  // ])
+  ->name('posts.show');
 
 Route::get('/recent-posts/{days_ago?}', function ($daysAgo = 20) {
-    return 'Posts from ' . $daysAgo . ' days ago';
+  return 'Posts from ' . $daysAgo . ' days ago';
 })->name('posts.recent.index');
