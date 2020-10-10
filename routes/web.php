@@ -18,7 +18,7 @@ Route::get('/', function () {
 })->name('home.index');
 
 Route::get('/contact', function () {
-  return 'Contact';
+  return view('home.contact');
 })->name('home.contact');
 
 Route::get('/posts/{id}', function ($id) {
