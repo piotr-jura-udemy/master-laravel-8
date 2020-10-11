@@ -22,7 +22,20 @@ Route::get('/contact', function () {
 })->name('home.contact');
 
 Route::get('/posts/{id}', function ($id) {
-  return 'Blog post ' . $id;
+  $posts = [
+    1 => [
+      'title' => 'Intro to Laravel',
+      'content' => 'This is a short intro to Laravel'
+    ],
+    2 => [
+      'title' => 'Intro to PHP',
+      'content' => 'This is a short intro to PHP'
+    ]
+  ];
+
+  abort_if(!isset($posts[$id]), 404);
+
+  return view('posts.show', ['post' => $posts[$id]]);
 })
   // ->where([
   //     'id' => '[0-9]+'
