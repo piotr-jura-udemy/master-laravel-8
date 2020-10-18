@@ -90,3 +90,6 @@ Route::get('/fun/json', function() use($posts) {
   return response()->json($posts);
 });
 
+Route::get('/fun/download', function() use($posts) {
+  return response()->download(public_path('/daniel.jpg'), 'face.jpg');
+});
