@@ -86,3 +86,7 @@ Route::get('/fun/away', function() {
   return redirect()->away('https://google.com');
 });
 
+Route::get('/fun/json', function() use($posts) {
+  return response()->json($posts);
+});
+
