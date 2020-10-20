@@ -1,6 +1,6 @@
 {
     "files.autoSave": "afterDelay",
-    "window.zoomLevel": 6,
+    "window.zoomLevel": 4,
     "workbench.colorTheme": "Umbra",
     "editor.fontFamily": "'Cascadia Code"
 }
