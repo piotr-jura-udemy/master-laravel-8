@@ -65,7 +65,7 @@ Route::get('/posts/{id}', function ($id) use ($posts) {
 
 Route::get('/recent-posts/{days_ago?}', function ($daysAgo = 20) {
   return 'Posts from ' . $daysAgo . ' days ago';
-})->name('posts.recent.index');
+})->name('posts.recent.index')->middleware('auth');
 
 Route::prefix('/fun')->name('fun.')->group(function() use($posts) {
   Route::get('responses', function() use($posts) {
